@@ -1,0 +1,9 @@
+@mixin mixin-font-face($font-name, $font-weight, $font-style) {
+	@font-face {
+		font-family: Poppins;
+		font-display: "fallback";
+		font-style: $font-style;
+		font-weight: $font-weight;
+		src: local($font-name), url("../../assets/fonts/#{$font-name}.ttf") format("truetype");
+	}
+}

@@ -1,0 +1,32 @@
+@use "sass:map";
+@import "@scss/base/fonts";
+
+// GREEN RGB: 72, 230, 196 -- GREEN DARK RGB: 0, 221, 173
+// GREY RGB: 173, 181, 189 - GREY DARK RGB: 43, 47, 49
+
+:root {
+	// MAIN
+	--bs-primary-rgb: 43, 47, 49;
+	--bs-secondary-rgb: 72, 230, 196;
+	--bs-dark-rgb: 0, 0, 0;
+
+	// MESSAGES
+	--bs-success-rgb: 72, 230, 196;
+
+	// TEXT
+	--bs-text-opacity: 220, 53, 69;
+
+	// HYPERLINK
+	--bs-link-color-rgb: 173, 181, 189;
+	--bs-link-hover-color-rgb: 72, 230, 196;
+
+	// BUTTON
+	--bs-link-color: rgb(72 230 196);
+	--bs-link-hover-color: rgb(0 221 173);
+}
+
+// BUTTON
+.btn-success {
+	--bs-btn-border-color: rgba(255 255 255 / 0%);
+	--bs-btn-hover-border-color: rgb(72 230 196);
+}

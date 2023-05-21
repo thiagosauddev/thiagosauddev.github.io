@@ -1,9 +1,12 @@
 name: WORKFLOW CONTROLLER [CI/CD]
 
-on: [workflow_dispatch, pull_request]
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
 
 jobs:
   linters:
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
     uses: ./.github/workflows/linters.yml
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true

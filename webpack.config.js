@@ -3,12 +3,15 @@ const YAML = require("yamljs");
 const AutoPrefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlFaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const HtmlCSPWebpackPlugin = require("csp-html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const PACKAGE_JSON = require("./package.json");
+
+const IS_DEV_MODE = process.env.WEBPACK_SERVE;
 
 const SITE_INFORMATION = {
 	TITLE: "THIAGO SAUD DEVELOPER | Take your business to the next level!",
@@ -31,12 +34,12 @@ const getHTMLWebpackPlugin = filename => ({
 	meta: {
 		charset: "UTF-8",
 		viewport: "width=device-width, initial-scale=1.0",
+		canonical: SITE_INFORMATION.URL,
 		author: SITE_INFORMATION.AUTHOR,
 		description: SITE_INFORMATION.DESCRIPTION,
 		keywords: SITE_INFORMATION.KEYWORDS,
 		robots: "index, follow",
 		googlebot: "index, follow",
-		"http-equiv": "X-UA-Compatible",
 		"og:locale": "en_US",
 		"og:type": "website",
 		"og:url": SITE_INFORMATION.URL,
@@ -80,7 +83,7 @@ module.exports = {
 			outputPath: "static/assets",
 			logo: PATH.resolve(__dirname, "src/assets/images/logotype.webp"),
 			favicons: {
-				start_url: "/",
+				start_url: IS_DEV_MODE ? "/" : SITE_INFORMATION.URL,
 				manifestMaskable: true,
 				appName: SITE_INFORMATION.TITLE,
 				appShortName: SITE_INFORMATION.TITLE_SHORT,
@@ -91,7 +94,7 @@ module.exports = {
 				background: SITE_INFORMATION.BACKGROUND_COLOR,
 			},
 			manifest: {
-				start_url: "/",
+				start_url: IS_DEV_MODE ? "/" : SITE_INFORMATION.URL,
 				name: SITE_INFORMATION.TITLE,
 				short_name: SITE_INFORMATION.TITLE_SHORT,
 				background_color: SITE_INFORMATION.BACKGROUND_COLOR,
@@ -99,6 +102,33 @@ module.exports = {
 				orientation: "portrait",
 			},
 		}),
+		new HtmlCSPWebpackPlugin(
+			{
+				"default-src": "'self'",
+				"base-uri": "'self'",
+				"connect-src": "*",
+				"font-src": "*",
+				"frame-src": "'none'",
+				"img-src": "*",
+				"manifest-src": "*",
+				"media-src": "'none'",
+				"object-src": "'none'",
+				"style-src": "*",
+				"script-src": ["'unsafe-inline'", "'self'", "'unsafe-eval'"],
+			},
+			{
+				enabled: true,
+				hashingMethod: "sha256",
+				hashEnabled: {
+					"script-src": true,
+					"style-src": true,
+				},
+				nonceEnabled: {
+					"script-src": true,
+					"style-src": true,
+				},
+			}
+		),
 		new MiniCssExtractPlugin({
 			filename: "static/css/[name].[contenthash:8].css",
 			chunkFilename: "static/css/[id].[contenthash:8].chunk.css",
@@ -123,7 +153,7 @@ module.exports = {
 		},
 	},
 	output: {
-		clean: !process.env.WEBPACK_SERVE,
+		clean: !IS_DEV_MODE,
 		path: PATH.resolve(__dirname, "dist"),
 		filename: "static/js/[name].[contenthash:8].js",
 		chunkFilename: "static/js/[id].[chunkhash:8].chunk.js",

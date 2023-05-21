@@ -54,6 +54,7 @@
 		"branch-name-lint": "^2.1.1",
 		"commitlint": "^17.6.3",
 		"copy-webpack-plugin": "^11.0.0",
+		"csp-html-webpack-plugin": "^5.1.0",
 		"css-loader": "^6.7.3",
 		"css-minimizer-webpack-plugin": "^4.2.2",
 		"eslint": "^7.32.0 || ^8.2.0",

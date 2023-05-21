@@ -34,6 +34,7 @@ yarn.lock
 .gitignore
 .prettierignore
 .commitlintrc
+CNAME
 LICENSE
 
 # SRC FILES/FOLDERS

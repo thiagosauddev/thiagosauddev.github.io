@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Use Nodejs ${{ matrix.node-version }} - ${{ matrix. architecture }}
         uses: actions/setup-node@v3
@@ -25,7 +27,7 @@ jobs:
       - name: RUN COMMIT
         uses: borales/actions-yarn@v4
         with:
-          cmd: commitlint:check
+          cmd: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       - name: RUN BRANCHNAME
         uses: borales/actions-yarn@v4

@@ -33,5 +33,5 @@ module.exports = {
 	},
 	plugins: ["prettier"],
 	rules: {},
-	ignorePatterns: [".eslintrc.js", "webpack.config.js"],
+	ignorePatterns: [".eslintrc.js", "webpack.config.js", "src/scripts/google-analytics.js"],
 };

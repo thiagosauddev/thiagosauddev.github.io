@@ -40,9 +40,9 @@ jobs:
       - name: RUN STYLE
         uses: borales/actions-yarn@v4
         with:
-          cmd: branchnamelint:check
+          cmd: stylelint:check
 
       - name: RUN ESLINT
         uses: borales/actions-yarn@v4
         with:
-          cmd: eslint
+          cmd: lint

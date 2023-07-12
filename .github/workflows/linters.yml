@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Use Nodejs ${{ matrix.node-version }} - ${{ matrix. architecture }}
         uses: actions/setup-node@v3
@@ -25,12 +27,15 @@ jobs:
       - name: RUN COMMIT
         uses: borales/actions-yarn@v4
         with:
-          cmd: commitlint:check
+          cmd: commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       - name: RUN BRANCHNAME
-        uses: borales/actions-yarn@v4
+        uses: lekterable/branchlint-action@2.0.0
         with:
-          cmd: branchnamelint:check
+          allowed: |
+            development
+            /(feature|hotfix)/i
+          errorMessage: "Branches with the name are not allowed."
 
       - name: RUN PRETTIER
         uses: borales/actions-yarn@v4
@@ -40,9 +45,9 @@ jobs:
       - name: RUN STYLE
         uses: borales/actions-yarn@v4
         with:
-          cmd: branchnamelint:check
+          cmd: stylelint:check
 
       - name: RUN ESLINT
         uses: borales/actions-yarn@v4
         with:
-          cmd: eslint
+          cmd: lint

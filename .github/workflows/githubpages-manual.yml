@@ -37,7 +37,7 @@ jobs:
           cmd: build
 
       - name: RUN SETUP PAGES
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v3
 
       - name: RUN UPLOAD ARTIFACT
         uses: actions/upload-pages-artifact@v1
@@ -46,4 +46,4 @@ jobs:
 
       - name: RUN DEPLOY TO GITHUB-PAGES
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2

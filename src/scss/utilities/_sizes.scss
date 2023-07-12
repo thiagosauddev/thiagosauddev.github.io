@@ -1,0 +1,9 @@
+@for $spacing from 0 through 1000 {
+	.ts-width-#{$spacing} {
+		width: #{$spacing}px;
+	}
+
+	.ts-height-#{$spacing} {
+		height: #{$spacing}px;
+	}
+}

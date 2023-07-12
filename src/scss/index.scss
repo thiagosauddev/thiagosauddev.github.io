@@ -1,0 +1,22 @@
+// VENDORS
+@import "@scss/vendors/bootstrap/index";
+
+// ANIMATIONS
+@import "@scss/animations/floating";
+
+// MIXINS
+@import "@scss/mixins/scrollbar";
+
+// BASES
+@import "@scss/base/reset";
+@import "@scss/base/fonts";
+
+// ABSTRACTS
+@import "@scss/abstracts/typography";
+
+// UTILITIES;
+@import "@scss/utilities/cursors";
+@import "@scss/utilities/images";
+@import "@scss/utilities/sizes";
+@import "@scss/utilities/spacings";
+@import "@scss/utilities/texts";

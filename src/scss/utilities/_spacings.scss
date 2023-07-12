@@ -1,0 +1,35 @@
+@for $spacing from 0 through 20 {
+	// MARGINS
+	.ts-mt-#{$spacing} {
+		margin-top: #{$spacing}rem;
+	}
+
+	.ts-mb-#{$spacing} {
+		margin-bottom: #{$spacing}rem;
+	}
+
+	.ts-mr-#{$spacing} {
+		margin-right: #{$spacing}rem;
+	}
+
+	.ts-ml-#{$spacing} {
+		margin-left: #{$spacing}rem;
+	}
+
+	// PADDINGS
+	.ts-pt-#{$spacing} {
+		padding-top: #{$spacing}rem;
+	}
+
+	.ts-pb-#{$spacing} {
+		padding-bottom: #{$spacing}rem;
+	}
+
+	.ts-pr-#{$spacing} {
+		padding-right: #{$spacing}rem;
+	}
+
+	.ts-pl-#{$spacing} {
+		padding-left: #{$spacing}rem;
+	}
+}

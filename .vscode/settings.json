@@ -1,0 +1,24 @@
+{
+	"editor.tabSize": 2,
+	"editor.rulers": [180, 180],
+	"editor.lineHeight": 24,
+	"editor.fontFamily": "Fira Code",
+	"editor.fontWeight": "450",
+	"editor.fontLigatures": true,
+	"editor.formatOnSave": true,
+	"editor.detectIndentation": true,
+	"editor.insertSpaces": true,
+	"editor.minimap.enabled": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.renderWhitespace": "all",
+	"editor.renderLineHighlight": "gutter",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true
+	},
+
+	"stylelint.validate": ["scss"],
+
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}

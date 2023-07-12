@@ -1,0 +1,25 @@
+@import "@scss/mixins/font-face";
+
+$font-name: "Poppins";
+
+// NORMAL
+@include mixin-font-face("Poppins-Thin", 100, normal);
+@include mixin-font-face("Poppins-ExtraLight", 200, normal);
+@include mixin-font-face("Poppins-Light", 300, normal);
+@include mixin-font-face("Poppins-Regular", normal, normal);
+@include mixin-font-face("Poppins-Medium", 500, normal);
+@include mixin-font-face("Poppins-SemiBold", 600, normal);
+@include mixin-font-face("Poppins-Bold", bold, normal);
+@include mixin-font-face("Poppins-ExtraBold", 800, normal);
+@include mixin-font-face("Poppins-Black", 900, normal);
+
+// ITALIC
+@include mixin-font-face("Poppins-ThinItalic", 100, italic);
+@include mixin-font-face("Poppins-ExtraLightItalic", 200, italic);
+@include mixin-font-face("Poppins-LightItalic", 300, italic);
+@include mixin-font-face("Poppins-Italic", 200, italic);
+@include mixin-font-face("Poppins-MediumItalic", 500, italic);
+@include mixin-font-face("Poppins-SemiBoldItalic", 600, italic);
+@include mixin-font-face("Poppins-BoldItalic", bold, italic);
+@include mixin-font-face("Poppins-ExtraBoldItalic", 800, italic);
+@include mixin-font-face("Poppins-BlackItalic", 900, italic);

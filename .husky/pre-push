@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn commitlint:check;
+yarn branchnamelint:check;
+
+yarn lint;
+yarn stylelint:check;
+yarn prettier:check;

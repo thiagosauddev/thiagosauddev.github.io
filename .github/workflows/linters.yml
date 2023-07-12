@@ -1,0 +1,48 @@
+name: LINTERS
+
+on: workflow_call
+jobs:
+  linters:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+        architecture: [x64]
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Use Nodejs ${{ matrix.node-version }} - ${{ matrix. architecture }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: RUN YARN INSTALL
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+
+      - name: RUN COMMIT
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: commitlint:check
+
+      - name: RUN BRANCHNAME
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: branchnamelint:check
+
+      - name: RUN PRETTIER
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: prettier:check
+
+      - name: RUN STYLE
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: branchnamelint:check
+
+      - name: RUN ESLINT
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: eslint

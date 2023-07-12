@@ -30,9 +30,12 @@ jobs:
           cmd: commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       - name: RUN BRANCHNAME
-        uses: borales/actions-yarn@v4
+        uses: lekterable/branchlint-action@2.0.0
         with:
-          cmd: branchnamelint:check
+          allowed: |
+            development
+            /(feature|hotfix)/i
+          errorMessage: "Branches with the name are not allowed."
 
       - name: RUN PRETTIER
         uses: borales/actions-yarn@v4

@@ -36,9 +36,6 @@ jobs:
         with:
           cmd: build
 
-      - name: RUN SETUP PAGES
-        uses: peaceiris/actions-gh-pages@v3
-
       - name: RUN UPLOAD ARTIFACT
         uses: actions/upload-artifact@v2
         with:

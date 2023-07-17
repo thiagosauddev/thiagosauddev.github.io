@@ -1,6 +1,6 @@
 {
 	"name": "thiagosauddev.github.io",
-	"version": "1.0.2-rc",
+	"version": "1.0.3-rc",
 	"license": "MIT",
 	"main": "./src/index.js",
 	"description": "Turning ideas into reality, High-performance solutions, Take your business to the next level!",

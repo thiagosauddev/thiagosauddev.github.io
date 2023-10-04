@@ -15,7 +15,7 @@ Technically this repository can be analyzed, as a real professional applies the 
 Using the most modern techniques and technologies in the market in web development, **syntactic analysis of code**, **code quality analysis**, **style-guide**, **code splitting**, **bundle**, **server**, etc...
 
 So, feel free to calmly analyze each line of code and technique employed.
-You can also [access this production link](https://thiagosaud.dev/) to view the landing page created for my company.
+You can also [access this production link](https://thiagosauddev.github.io) to view the landing page created for my company.
 
 ## :memo: License
 

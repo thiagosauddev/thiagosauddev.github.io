@@ -1,10 +1,9 @@
 {
 	"branchNameLinter": {
-		"prefixes": ["feature", "hotfix"],
+		"prefixes": ["release"],
 		"separator": "/",
 		"suggestions": {
-			"feature": "feature",
-			"hotfix": "hotfix"
+			"release": "release"
 		},
 		"skip": ["skip-ci"],
 		"banned": ["wip", "master"],

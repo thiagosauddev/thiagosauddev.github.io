@@ -13,7 +13,7 @@
 	"editor.renderWhitespace": "all",
 	"editor.renderLineHighlight": "gutter",
 	"editor.codeActionsOnSave": {
-		"source.fixAll.stylelint": true
+		"source.fixAll.stylelint": "explicit"
 	},
 
 	"stylelint.validate": ["scss"],

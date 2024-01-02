@@ -73,7 +73,7 @@ module.exports = {
 	devServer: {
 		static: PATH.resolve(__dirname, "dist"),
 		port: 3000,
-		open: true,
+		open: false,
 		hot: false,
 		liveReload: true,
 	},

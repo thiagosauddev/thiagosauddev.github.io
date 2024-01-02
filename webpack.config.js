@@ -141,6 +141,10 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{
+					from: PATH.resolve(__dirname, "src/assets/images/logotype.webp"),
+					to: PATH.resolve(__dirname, "dist/favicon.ico"),
+				},
+				{
 					from: PATH.resolve(__dirname, "src/robots.txt"),
 					to: PATH.resolve(__dirname, "dist"),
 					context: "*.txt",

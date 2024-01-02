@@ -1,11 +1,10 @@
 {
 	"recommendations": [
-		"ms-vscode.vscode-typescript-next",
 		"formulahendry.auto-close-tag",
 		"formulahendry.auto-rename-tag",
+		"BeardedBear.beardedtheme",
 		"naumovs.color-highlight",
 		"anseki.vscode-color",
-		"firefox-devtools.vscode-firefox-debug",
 		"mikestead.dotenv",
 		"EditorConfig.EditorConfig",
 		"dbaeumer.vscode-eslint",
@@ -14,10 +13,17 @@
 		"ecmel.vscode-html-css",
 		"VisualStudioExptTeam.vscodeintellicode",
 		"VisualStudioExptTeam.intellicode-api-usage-examples",
+		"ms-vscode.vscode-typescript-next",
+		"ms-vscode.js-debug-nightly",
 		"bierner.markdown-preview-github-styles",
+		"PKief.material-icon-theme",
+		"ms-edgedevtools.vscode-edge-devtools",
 		"christian-kohler.npm-intellisense",
 		"christian-kohler.path-intellisense",
-		"esbenp.prettier-vscode",
-		"stylelint.vscode-stylelint"
+		"stylelint.vscode-stylelint",
+		"jock.svg",
+		"wayou.vscode-todo-highlight",
+		"Gruntfuggly.todo-tree",
+		"redhat.vscode-yaml"
 	]
 }

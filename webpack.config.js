@@ -18,8 +18,9 @@ const PACKAGE_JSON = require("./package.json");
 const IS_DEV_MODE = process.env.WEBPACK_SERVE;
 
 const SITE_INFORMATION = {
+	VERSION: PACKAGE_JSON.version,
 	TITLE: "THIAGO SAUD DEVELOPER | Take your business to the next level!",
-	TITLE_SHORT: "THIAGO SAUD DEVELOPER",
+	TITLE_SHORT: "TS DEVELOPER",
 	URL: PACKAGE_JSON.author.url,
 	URL_IMAGE: "https://raw.githubusercontent.com/thiagosauddev/thiagosauddev/main/images/banner.png",
 	AUTHOR: PACKAGE_JSON.author.name,
@@ -83,12 +84,17 @@ module.exports = {
 			inject: true,
 			mode: "webapp",
 			devMode: "webapp",
-			publicPath: "static",
-			outputPath: "static/assets",
+			publicPath: IS_DEV_MODE ? "static" : PATH.resolve(__dirname, "dist"),
+			outputPath: IS_DEV_MODE ? "static/assets" : PATH.resolve(__dirname, "dist"),
 			logo: PATH.resolve(__dirname, "src/assets/images/logotype.webp"),
+			logoMaskable: PATH.resolve(__dirname, "src/assets/images/logotype-maskable.webp"),
+			manifest: { id: "/" },
 			favicons: {
-				start_url: IS_DEV_MODE ? "/" : SITE_INFORMATION.URL,
+				start_url: "/",
+				orientation: "portrait",
+				display: "standalone",
 				manifestMaskable: true,
+				version: SITE_INFORMATION.VERSION,
 				appName: SITE_INFORMATION.TITLE,
 				appShortName: SITE_INFORMATION.TITLE_SHORT,
 				appDescription: SITE_INFORMATION.DESCRIPTION,
@@ -96,14 +102,6 @@ module.exports = {
 				developerURL: SITE_INFORMATION.URL,
 				theme_color: SITE_INFORMATION.THEME_COLOR,
 				background: SITE_INFORMATION.BACKGROUND_COLOR,
-			},
-			manifest: {
-				start_url: IS_DEV_MODE ? "/" : SITE_INFORMATION.URL,
-				name: SITE_INFORMATION.TITLE,
-				short_name: SITE_INFORMATION.TITLE_SHORT,
-				background_color: SITE_INFORMATION.BACKGROUND_COLOR,
-				theme_color: SITE_INFORMATION.THEME_COLOR,
-				orientation: "portrait",
 			},
 		}),
 		new HtmlCSPWebpackPlugin(
@@ -140,10 +138,6 @@ module.exports = {
 		new PurgeCSSPlugin({ paths: GLOB.sync(`${PATH.join(__dirname, "src")}/**/*`, { nodir: true }) }),
 		new CopyPlugin({
 			patterns: [
-				{
-					from: PATH.resolve(__dirname, "src/assets/images/logotype.webp"),
-					to: PATH.resolve(__dirname, "dist/favicon.ico"),
-				},
 				{
 					from: PATH.resolve(__dirname, "src/robots.txt"),
 					to: PATH.resolve(__dirname, "dist"),

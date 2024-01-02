@@ -1,4 +1,5 @@
 const PATH = require("path");
+const GLOB = require("glob");
 const YAML = require("yamljs");
 const AutoPrefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -8,7 +9,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const BrowserslistPlugin = require("browserslist");
+const LightningcssPlugin = require("lightningcss");
 const PACKAGE_JSON = require("./package.json");
 
 const IS_DEV_MODE = process.env.WEBPACK_SERVE;
@@ -133,6 +137,7 @@ module.exports = {
 			filename: "static/css/[name].[contenthash:8].css",
 			chunkFilename: "static/css/[id].[contenthash:8].chunk.css",
 		}),
+		new PurgeCSSPlugin({ paths: GLOB.sync(`${PATH.join(__dirname, "src")}/**/*`, { nodir: true }) }),
 		new CopyPlugin({
 			patterns: [
 				{
@@ -170,26 +175,40 @@ module.exports = {
 					name: "vendors",
 					chunks: "all",
 				},
+				styles: {
+					name: "styles",
+					test: /\.css$/,
+					chunks: "all",
+					enforce: true,
+				},
 			},
 		},
+		minimize: true,
 		minimizer: [
 			new CssMinimizerPlugin({
 				parallel: true,
-				minify: CssMinimizerPlugin.cleanCssMinify,
+				minify: CssMinimizerPlugin.lightningCssMinify,
+				minimizerOptions: {
+					targets: LightningcssPlugin.browserslistToTargets(new BrowserslistPlugin(">= 0.25%")),
+				},
 			}),
 			new TerserPlugin({
 				test: /\.js(\?.*)?$/i,
 				parallel: true,
 				terserOptions: {
 					ecma: 8,
+					mangle: { safari10: true },
 					compress: {
 						ecma: 5,
-						warnings: false,
-						comparisons: false,
 						inline: 2,
-					},
-					mangle: {
-						safari10: true,
+						toplevel: true,
+						comparisons: false,
+						dead_code: true,
+						unused: true,
+						join_vars: true,
+						warnings: !IS_DEV_MODE,
+						drop_console: !IS_DEV_MODE,
+						drop_debugger: !IS_DEV_MODE,
 					},
 				},
 			}),

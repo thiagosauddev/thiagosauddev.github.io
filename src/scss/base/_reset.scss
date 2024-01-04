@@ -1,8 +1,5 @@
+@import "@scss/base/reset";
+
 * {
 	font-family: $font-name;
-}
-
-html,
-body {
-	scrollbar-color: #48e6c4 #2b2f31; // FIREFOX
 }

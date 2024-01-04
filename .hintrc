@@ -1,0 +1,17 @@
+{
+	"connector": "jsdom",
+  "extends": ["web-recommended"],
+  "hints": {
+    "meta-charset-utf-8": "off",
+    "meta-viewport": "off",
+    "compat-api/css": ["default", {
+			"ignore": [
+				"hyphens",
+          "scrollbar-color"
+        ]
+      }
+    ],
+    "detect-css-reflows/composite": "off",
+    "detect-css-reflows/paint": "off"
+  }
+}

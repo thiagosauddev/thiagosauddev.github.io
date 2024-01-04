@@ -1,18 +1,20 @@
-const PATH = require("path");
-const GLOB = require("glob");
-const YAML = require("yamljs");
-const AutoPrefixer = require("autoprefixer");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const HtmlFaviconsWebpackPlugin = require("favicons-webpack-plugin");
-const HtmlCSPWebpackPlugin = require("csp-html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlFaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const HtmlCSPWebpackPlugin = require("csp-html-webpack-plugin");
+
+const AutoPrefixer = require("autoprefixer");
 const BrowserslistPlugin = require("browserslist");
-const LightningcssPlugin = require("lightningcss");
+const YAML = require("yamljs");
+
+const GLOB = require("glob");
+const LIGHTNING_CSS_PLUGIN = require("lightningcss");
+const PATH = require("path");
 const PACKAGE_JSON = require("./package.json");
 
 const IS_DEV_MODE = process.env.WEBPACK_SERVE;
@@ -187,7 +189,7 @@ module.exports = {
 				parallel: true,
 				minify: CssMinimizerPlugin.lightningCssMinify,
 				minimizerOptions: {
-					targets: LightningcssPlugin.browserslistToTargets(new BrowserslistPlugin(">= 0.25%")),
+					targets: LIGHTNING_CSS_PLUGIN.browserslistToTargets(new BrowserslistPlugin(">= 0.25%")),
 				},
 			}),
 			new TerserPlugin({

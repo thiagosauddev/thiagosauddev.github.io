@@ -2,5 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn lint;
-yarn stylelint:check;
-yarn prettier:check;
+yarn lint:scss;
+
+yarn prettier;

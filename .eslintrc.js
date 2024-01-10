@@ -3,7 +3,8 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: ["airbnb-base", "plugin:prettier/recommended"],
+	ignorePatterns: ["**/vendor/*.js", "*.txt", "*.md", "*.html", "*.lock", "src/scss", "src/scripts", "src/assets", "dist", "coverage"],
+	extends: ["airbnb-base", "eslint:recommended", "plugin:prettier/recommended"],
 	settings: {
 		"import/resolver": {
 			alias: {
@@ -32,6 +33,15 @@ module.exports = {
 		sourceType: "module",
 	},
 	plugins: ["prettier"],
-	rules: {},
-	ignorePatterns: [".eslintrc.js", "webpack.config.js", "src/scripts/google-analytics.js"],
+	rules: {
+		"import/no-extraneous-dependencies": [0, { devDependencies: ["**/webpack.config.js"] }],
+		"prettier/prettier": [
+			"warn",
+			{ endOfLine: "auto" },
+			{
+				usePrettierrc: true,
+				fileInfoOptions: { withNodeModules: false },
+			},
+		],
+	},
 };

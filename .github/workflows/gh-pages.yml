@@ -14,7 +14,8 @@ permissions:
   pages: write
   id-token: write
 
-concurrency: # Allow one concurrent deployment
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 

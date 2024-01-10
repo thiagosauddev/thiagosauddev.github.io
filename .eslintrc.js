@@ -34,6 +34,7 @@ module.exports = {
 	},
 	plugins: ["prettier"],
 	rules: {
+		"import/no-extraneous-dependencies": [0, { devDependencies: ["**/webpack.config.js"] }],
 		"prettier/prettier": [
 			"warn",
 			{ endOfLine: "auto" },

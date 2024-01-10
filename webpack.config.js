@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlFaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const HtmlCSPWebpackPlugin = require("csp-html-webpack-plugin");
+const HtmlScriptExtWebpackPlugin = require("script-ext-html-webpack-plugin");
 
 const AutoPrefixer = require("autoprefixer");
 const BrowserslistPlugin = require("browserslist");
@@ -82,6 +83,17 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin(getHTMLWebpackPlugin("index.html")),
 		new HtmlWebpackPlugin(getHTMLWebpackPlugin("404.html")),
+		new HtmlScriptExtWebpackPlugin({
+			defaultAttribute: "defer",
+			preload: {
+				test: /\.js$/,
+				chunks: "all",
+			},
+			prefetch: {
+				test: /\.js$/,
+				chunks: "all",
+			},
+		}),
 		new HtmlFaviconsWebpackPlugin({
 			inject: true,
 			mode: "webapp",

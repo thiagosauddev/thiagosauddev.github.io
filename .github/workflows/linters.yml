@@ -1,6 +1,9 @@
 name: LINTERS
 
-on: workflow_call
+on:
+  pull_request:
+    branches:
+      - "release/*"
 jobs:
   linters:
     runs-on: ubuntu-latest
@@ -19,30 +22,37 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: CACHE NODE.JS MODULES
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
       - name: RUN YARN INSTALL
         uses: borales/actions-yarn@v4
         with:
           cmd: install
 
-      - name: RUN COMMIT
+      - name: RUN COMMITLINT
         uses: borales/actions-yarn@v4
         with:
           cmd: commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
-      - name: RUN BRANCHNAME
+      - name: RUN BRANCHLINT
         uses: lekterable/branchlint-action@2.0.0
         with:
           allowed: |
-            development
-            /(feature|hotfix)/i
+            /release\//i
           errorMessage: "Branches with the name are not allowed."
 
-      - name: RUN PRETTIER
+      - name: RUN PRETTIER CHECK
         uses: borales/actions-yarn@v4
         with:
           cmd: prettier:check
 
-      - name: RUN STYLE
+      - name: RUN STYLELINT
         uses: borales/actions-yarn@v4
         with:
           cmd: stylelint:check

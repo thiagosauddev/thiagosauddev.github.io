@@ -1,5 +1,5 @@
 {
-	"connector": "jsdom",
+  "connector": "jsdom",
   "extends": ["web-recommended"],
   "hints": {
     "meta-charset-utf-8": "off",
@@ -7,11 +7,16 @@
     "compat-api/css": ["default", {
 			"ignore": [
 				"hyphens",
-          "scrollbar-color"
-        ]
-      }
+				"scrollbar-color"
+			]
+			}
     ],
     "detect-css-reflows/composite": "off",
     "detect-css-reflows/paint": "off"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not ios_saf <= 14.8"
+  ]
 }

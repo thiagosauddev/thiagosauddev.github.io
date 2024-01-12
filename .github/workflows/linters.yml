@@ -3,7 +3,7 @@ name: LINTERS
 on:
   pull_request:
     branches:
-      - "release/*"
+      - "main"
 jobs:
   linters:
     runs-on: ubuntu-latest

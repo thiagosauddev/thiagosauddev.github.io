@@ -48,16 +48,16 @@ jobs:
         with:
           cmd: build
 
-      - name: SETUP PAGES
-        uses: actions/configure-pages@v4
-
       - name: RUN UPLOAD ARTIFACT
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          path: "." # Upload entire repository
+          name: dist
+          path: dist # Upload entire repository
 
       - name: RUN DEPLOY TO GITHUB-PAGES
-        id: deployment
-        uses: actions/deploy-pages@v4
-        # with:
-        #   cname: thiagosaud.dev
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+        #cname: thiagosaud.dev

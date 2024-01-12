@@ -153,7 +153,10 @@ module.exports = {
 			filename: "static/css/[name].[contenthash:8].css",
 			chunkFilename: "static/css/[id].[contenthash:8].chunk.css",
 		}),
-		new PurgeCSSPlugin({ paths: GLOB.sync(`${PATH.join(__dirname, "src")}/**/*`, { nodir: true }) }),
+		new PurgeCSSPlugin({
+			paths: GLOB.sync(`${PATH.join(__dirname, "src")}/**/*`, { nodir: true }),
+			only: ["bundle", "vendor"],
+		}),
 		new CopyPlugin({
 			patterns: [
 				{

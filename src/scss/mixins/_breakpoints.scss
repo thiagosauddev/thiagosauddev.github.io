@@ -1,0 +1,17 @@
+$breakpoints: (
+	"sm": 576px,
+	"md": 768px,
+	"lg": 992px,
+	"xlg": 1200px,
+);
+
+// Crie um mixin para lidar com os media queries
+@mixin breakpoint($name) {
+	@if map-has-key($breakpoints, $name) {
+		@media (min-width: map-get($breakpoints, $name)) {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no breakpoint was found with the name '#{$name}'.";
+	}
+}

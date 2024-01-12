@@ -1,12 +1,21 @@
 name: GITHUB PAGES DEPLOY
 
-on: [workflow_call, workflow_dispatch]
-permissions: # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
   contents: write
   pages: write
   id-token: write
 
-concurrency: # Allow one concurrent deployment
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
@@ -19,7 +28,7 @@ jobs:
         architecture: [x64]
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Nodejs ${{ matrix.node-version }} - ${{ matrix. architecture }}
         uses: actions/setup-node@v3
@@ -30,6 +39,9 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install
+
+      - name: CLEAN BUILD DIRECTORY
+        run: rm -rf dist
 
       - name: RUN YARN BUILD
         uses: borales/actions-yarn@v4
@@ -45,7 +57,7 @@ jobs:
       - name: RUN DEPLOY TO GITHUB-PAGES
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
-          # cname: thiagosaud.dev
+        #cname: thiagosaud.dev

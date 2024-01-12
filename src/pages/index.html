@@ -7,9 +7,7 @@
 
 	<body>
 		<!-- ALERT -->
-		<div class="alert alert-warning rounded-0 border-right-0 border-left-0" role="alert">
-			<strong>Disclaimer:</strong> I am currently in an exclusive contract with the client <strong>BTG Pactual</strong>.
-		</div>
+		<div class="m-1 alert alert-warning" role="alert"><strong>Disclaimer:</strong> I am currently in an exclusive contract with the client <strong>BTG Pactual</strong>.</div>
 
 		<!-- NAVIGATION  -->
 		<nav class="navbar container-xl flex-nowrap px-2 px-md-4 py-4 py-xl-5">
@@ -22,6 +20,7 @@
 				<div class="d-flex align-items-center gap-md-5">
 					<div class="d-none d-lg-flex gap-md-5">
 						<a
+							rel="noopener"
 							href="https://www.linkedin.com/in/thiagosaud/"
 							target="_blank"
 							class="text-decoration-none d-none d-sm-flex align-items-center gap-2 fs-4"
@@ -31,7 +30,7 @@
 							<span class="fs-6">Linkedin</span>
 						</a>
 
-						<a
+						<!-- <a
 							href="https://instagram.com/thiagosauddev/"
 							target="_blank"
 							class="text-decoration-none d-none d-sm-flex align-items-center gap-2 fs-4"
@@ -39,9 +38,10 @@
 						>
 							<i class="bi bi-instagram"></i>
 							<span class="fs-6">Instagram</span>
-						</a>
+						</a> -->
 
 						<a
+							rel="noopener"
 							href="https://github.com/thiagosauddev"
 							target="_blank"
 							class="text-decoration-none d-none d-sm-flex align-items-center gap-2 fs-4"
@@ -55,6 +55,7 @@
 					<div
 						href="mailto:contact@thiagosaud.dev?subject=HIRING - [INSERT THE COMPANY NAME] &amp;body=BUDGET FOR THE PROJECT (R$ or $) %0d%0aR: %0d%0a%0d%0aESTIMATED DEADLINE FOR THE PROJECT (HOURS)%0d%0aR: %0d%0a%0d%0aCONTRACT PROPOSAL (Describe here with details about the company and the project.)%0d%0aR: %0d%0a%0d%0aWHAT DO YOU EXPECT FROM ME AS A PROFESSIONAL ?%0d%0aR:%0d%0a%0d%0aWHAT ARE THE BENEFITS OFFERED (If any, describe)?%0d%0aR:%0d%0a%0d%0a"
 						class="ts-width-65 ts-height-65 ts-cursor-not-allowed d-flex justify-content-center align-items-center bg-primary rounded-circle rounded-5 fs-2 opacity-25"
+						role="button"
 						aria-label="Open email box to contact me!"
 					>
 						<i class="bi bi-envelope text-opacity-25"></i>
@@ -98,28 +99,31 @@
 
 						<div class="mt-4 d-flex d-lg-none justify-content-center align-items-center gap-5">
 							<div class="d-flex gap-5">
-								<a href="https://www.linkedin.com/in/thiagosaud/" target="_blank" class="icon-link fs-1" aria-label="Open my page on Linkedin!">
+								<a rel="noopener" href="https://www.linkedin.com/in/thiagosaud/" target="_blank" class="icon-link fs-1" aria-label="Open my page on Linkedin!">
 									<i class="bi bi-linkedin"></i>
 								</a>
 
-								<a href="https://instagram.com/thiagosauddev/" target="_blank" class="icon-link fs-1" aria-label="Open my page on Instagram!">
+								<!-- <a href="https://instagram.com/thiagosauddev/" target="_blank" class="icon-link fs-1" aria-label="Open my page on Instagram!">
 									<i class="bi bi-instagram"></i>
-								</a>
+								</a> -->
 
-								<a href="https://github.com/thiagosauddev" target="_blank" class="icon-link fs-1" aria-label="Open my page on Github!">
+								<a rel="noopener" href="https://github.com/thiagosauddev" target="_blank" class="icon-link fs-1" aria-label="Open my page on Github!">
 									<i class="bi bi-github"></i>
 								</a>
 							</div>
 						</div>
 					</div>
 
-					<div class="w-100 position-relative d-none d-lg-flex justify-content-center align-items-stretch ts-mt-15">
-						<div class="position-absolute z-1 top-50 start-50 translate-middle ts-pb-17">
-							<img class="animation-floating w-100" src="../assets/images/logotype.webp" alt="THIAGO SAUD DEVELOPER LOGOTYPE IMAGE" />
+					<div class="w-100 position-relative d-none d-lg-flex">
+						<div class="position-absolute z-1 start-50 translate-middle">
+							<img height="321" width="359" class="ts-mb-2 animation-floating" src="../assets/images/logotype.webp" alt="THIAGO SAUD DEVELOPER LOGOTYPE IMAGE" />
 						</div>
 
 						<img
-							class="ts-width-486 ts-height-165 position-absolute z-0 top-50 start-50 translate-middle w-75 opacity-25"
+							height="142"
+							width="418"
+							loading="lazy"
+							class="position-absolute ts-mt-9 z-0 start-50 translate-middle opacity-25"
 							src="../assets/images/utils/ground-shadow.webp"
 							alt="GROUND SHADOW IMAGE"
 						/>
@@ -213,20 +217,20 @@
 						<div class="carousel-inner">
 							<div class="ts-height-485 carousel-item active pt-3">
 								<div class="d-flex flex-column align-items-center align-self-center gap-5">
-									<img height="31" width="150" class="opacity-50" src="../assets/images/clients/neoris.webp" alt="NEORIS CLIENT LOGOTYPE" />
-									<img height="57" width="150" class="opacity-50" src="../assets/images/clients/btg.webp" alt="BTG PACTUAL CLIENT LOGOTYPE" />
-									<img height="44" width="50" class="opacity-50" src="../assets/images/clients/xp.webp" alt="XP INVESTMENTS CLIENT LOGOTYPE" />
-									<img height="41" width="150" class="opacity-50" src="../assets/images/clients/hubie.webp" alt="HUBIE CLIENT LOGOTYPE" />
-									<img height="38" width="120" class="opacity-50" src="../assets/images/clients/zoox.webp" alt="ZOOX CLIENT LOGOTYPE" />
+									<img height="31" width="150" loading="lazy" class="opacity-50" src="../assets/images/clients/neoris.webp" alt="NEORIS CLIENT LOGOTYPE" />
+									<img height="57" width="150" loading="lazy" class="opacity-50" src="../assets/images/clients/btg.webp" alt="BTG PACTUAL CLIENT LOGOTYPE" />
+									<img height="44" width="50" loading="lazy" class="opacity-50" src="../assets/images/clients/xp.webp" alt="XP INVESTMENTS CLIENT LOGOTYPE" />
+									<img height="33" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/hubie.webp" alt="HUBIE CLIENT LOGOTYPE" />
+									<img height="38" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/zoox.webp" alt="ZOOX CLIENT LOGOTYPE" />
 								</div>
 							</div>
 
 							<div class="carousel-item pt-3">
 								<div class="ts-height-469 d-flex flex-column align-items-center align-self-center gap-5">
-									<img height="55" width="55" class="opacity-50" src="../assets/images/clients/claro.webp" alt="CLARO CLIENT LOGOTYPE" />
-									<img height="55" width="55" class="opacity-50" src="../assets/images/clients/oi.webp" alt="OI CLIENT LOGOTYPE" />
-									<img height="67" width="120" class="opacity-50" src="../assets/images/clients/tim.webp" alt="TIM CLIENT LOGOTYPE" />
-									<img height="45" width="120" class="opacity-50" src="../assets/images/clients/vivo.webp" alt="VIVO CLIENT LOGOTYPE" />
+									<img height="55" width="55" loading="lazy" class="opacity-50" src="../assets/images/clients/claro.webp" alt="CLARO CLIENT LOGOTYPE" />
+									<img height="64" width="55" loading="lazy" class="opacity-50" src="../assets/images/clients/oi.webp" alt="OI CLIENT LOGOTYPE" />
+									<img height="36" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/tim.webp" alt="TIM CLIENT LOGOTYPE" />
+									<img height="37" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/vivo.webp" alt="VIVO CLIENT LOGOTYPE" />
 								</div>
 							</div>
 						</div>
@@ -246,16 +250,16 @@
 					</div>
 
 					<div class="my-4 d-none d-sm-flex flex-wrap flex-row justify-content-center align-items-center align-self-center gap-5 w-75">
-						<img height="31" width="150" class="opacity-50" src="../assets/images/clients/neoris.webp" alt="NEORIS CLIENT LOGOTYPE" />
-						<img height="57" width="150" class="opacity-50" src="../assets/images/clients/btg.webp" alt="BTG PACTUAL CLIENT LOGOTYPE" />
-						<img height="44" width="50" class="opacity-50" src="../assets/images/clients/xp.webp" alt="XP INVESTMENTS CLIENT LOGOTYPE" />
-						<img height="41" width="150" class="opacity-50" src="../assets/images/clients/hubie.webp" alt="HUBIE CLIENT LOGOTYPE" />
-						<img height="38" width="120" class="opacity-50" src="../assets/images/clients/zoox.webp" alt="ZOOX CLIENT LOGOTYPE" />
+						<img height="31" width="150" loading="lazy" class="opacity-50" src="../assets/images/clients/neoris.webp" alt="NEORIS CLIENT LOGOTYPE" />
+						<img height="57" width="150" loading="lazy" class="opacity-50" src="../assets/images/clients/btg.webp" alt="BTG PACTUAL CLIENT LOGOTYPE" />
+						<img height="44" width="50" loading="lazy" class="opacity-50" src="../assets/images/clients/xp.webp" alt="XP INVESTMENTS CLIENT LOGOTYPE" />
+						<img height="33" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/hubie.webp" alt="HUBIE CLIENT LOGOTYPE" />
+						<img height="38" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/zoox.webp" alt="ZOOX CLIENT LOGOTYPE" />
 
-						<img height="55" width="55" class="opacity-50" src="../assets/images/clients/claro.webp" alt="CLARO CLIENT LOGOTYPE" />
-						<img height="55" width="55" class="opacity-50" src="../assets/images/clients/oi.webp" alt="OI CLIENT LOGOTYPE" />
-						<img height="67" width="120" class="opacity-50" src="../assets/images/clients/tim.webp" alt="TIM CLIENT LOGOTYPE" />
-						<img height="45" width="120" class="opacity-50" src="../assets/images/clients/vivo.webp" alt="VIVO CLIENT LOGOTYPE" />
+						<img height="55" width="55" loading="lazy" class="opacity-50" src="../assets/images/clients/claro.webp" alt="CLARO CLIENT LOGOTYPE" />
+						<img height="64" width="55" loading="lazy" class="opacity-50" src="../assets/images/clients/oi.webp" alt="OI CLIENT LOGOTYPE" />
+						<img height="36" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/tim.webp" alt="TIM CLIENT LOGOTYPE" />
+						<img height="37" width="120" loading="lazy" class="opacity-50" src="../assets/images/clients/vivo.webp" alt="VIVO CLIENT LOGOTYPE" />
 					</div>
 				</div>
 			</section>
@@ -275,6 +279,7 @@
 									<h1 class="card-title fs-5 mb-0 text-success">WHATSAPP</h1>
 
 									<a
+										rel="noopener"
 										href="https://webwhatsapp-thiagosaud.vercel.app/"
 										target="_blank"
 										class="btn btn-link bg-primary fs-4 py-1 text-green"
@@ -287,8 +292,10 @@
 								</div>
 
 								<img
+									loading="lazy"
 									class="w-100 ts-height-500 ts-object-position-left card-img-middle object-fit-cover"
 									src="../assets/images/works/whatsapp.webp"
+									srcset="../assets/images/works/whatsapp.webp 320w, ../assets/images/works/whatsapp.webp 800w, ../assets/images/works/whatsapp.webp 1200w"
 									alt="WHATSAPP - INSTANT MESSAGE PROJECT"
 								/>
 							</div>
@@ -300,6 +307,7 @@
 									<h1 class="card-title fs-5 mb-0 text-success">SUPERIOR ELECTORAL COURT</h1>
 
 									<a
+										rel="noopener"
 										href="https://dapp-superior-electoral-court-thiagosaud.vercel.app/"
 										target="_blank"
 										class="btn btn-link bg-primary fs-4 py-1 text-green"
@@ -312,6 +320,7 @@
 								</div>
 
 								<img
+									loading="lazy"
 									class="w-100 ts-height-500 ts-object-position-left card-img-middle object-fit-cover"
 									src="../assets/images/works/tse.webp"
 									alt="SUPERIOR ELECTORAL COURT - BLOCKCHAIN PROJECT"
@@ -322,34 +331,10 @@
 						<div class="col-12 col-xl-5">
 							<div class="card border-0 rounded-3">
 								<div class="card-header border-0 d-flex align-items-center gap-3 py-3">
-									<h1 class="card-title fs-5 mb-0 text-success">HUBIE</h1>
-
-									<a
-										href="https://www.hubie.cloud/"
-										target="_blank"
-										class="btn btn-link bg-primary fs-4 py-1 text-green"
-										role="button"
-										aria-label="Open my Hubie project!"
-										title="View Project"
-									>
-										<i class="bi bi-eye"></i>
-									</a>
-								</div>
-
-								<img
-									class="w-100 ts-height-500 ts-object-position-left card-img-middle object-fit-cover"
-									src="../assets/images/works/hubie.webp"
-									alt="HUBIE - LANDING PAGE PROJECT"
-								/>
-							</div>
-						</div>
-
-						<div class="col-12 col-xl-5">
-							<div class="card border-0 rounded-3">
-								<div class="card-header border-0 d-flex align-items-center gap-3 py-3">
 									<h1 class="card-title fs-5 mb-0 text-success">BTG HOMEBROKER WEB</h1>
 
 									<a
+										rel="noopener"
 										href="https://www.btgpactualdigital.com/"
 										target="_blank"
 										class="btn btn-link bg-primary fs-4 py-1 text-green"
@@ -362,6 +347,7 @@
 								</div>
 
 								<img
+									loading="lazy"
 									class="w-100 ts-height-500 ts-object-position-left card-img-middle object-fit-cover"
 									src="../assets/images/works/btg-homebroker.webp"
 									alt="BTG PACTUAL - HOMEBROKER WEB PROJECT"
@@ -376,9 +362,25 @@
 								</div>
 
 								<img
+									loading="lazy"
 									class="w-100 ts-height-500 ts-object-position-left card-img-middle object-fit-cover"
 									src="../assets/images/works/xp.webp"
 									alt="XP INVESTMENTS - STRUCTURED OPTIONS PROJECT"
+								/>
+							</div>
+						</div>
+
+						<div class="col-12 col-xl-5">
+							<div class="card border-0 rounded-3">
+								<div class="card-header border-0 d-flex align-items-center gap-3 py-3">
+									<h1 class="card-title fs-5 mb-0 text-success">HUBIE</h1>
+								</div>
+
+								<img
+									loading="lazy"
+									class="w-100 ts-height-500 ts-object-position-left card-img-middle object-fit-cover"
+									src="../assets/images/works/hubie.webp"
+									alt="HUBIE - LANDING PAGE PROJECT"
 								/>
 							</div>
 						</div>
@@ -403,16 +405,16 @@
 
 					<div
 						href="mailto:contact@thiagosaud.dev?subject=HIRING - [INSERT THE COMPANY NAME] &amp;body=BUDGET FOR THE PROJECT (R$ or $) %0d%0aR: %0d%0a%0d%0aESTIMATED DEADLINE FOR THE PROJECT (HOURS)%0d%0aR: %0d%0a%0d%0aCONTRACT PROPOSAL (Describe here with details about the company and the project.)%0d%0aR: %0d%0a%0d%0aWHAT DO YOU EXPECT FROM ME AS A PROFESSIONAL ?%0d%0aR:%0d%0a%0d%0aWHAT ARE THE BENEFITS OFFERED (If any, describe)?%0d%0aR:%0d%0a%0d%0a"
-						class="btn btn-success border-0 ts-cursor-not-allowed text-decoration-none rounded-3 d-flex flex-column gap-2 bg-body p-3 px-4"
+						class="btn btn-success border-0 ts-cursor-not-allowed text-decoration-none rounded-3 d-flex flex-column gap-2 bg-body opacity-25 p-3 px-4"
 						aria-label="Open email box to contact me!"
 					>
 						<header class="d-flex align-items-center justify-content-between w-100">
-							<h1 class="fs-2 fw-light text-success text-opacity-25">E-mail</h1>
-							<i class="bi bi-envelope fs-1 text-success text-opacity-25"></i>
+							<h1 class="fs-2 fw-light text-success">E-mail</h1>
+							<i class="bi bi-envelope fs-1 text-success"></i>
 						</header>
 
 						<footer>
-							<p class="fs-5 fw-light text-start text-body text-opacity-25">No matter the size of your business or the problem you are facing, find out how I can help you!</p>
+							<p class="fs-5 fw-light text-start text-body">No matter the size of your business or the problem you are facing, find out how I can help you!</p>
 						</footer>
 					</div>
 				</div>
@@ -423,15 +425,15 @@
 					<span class="fs-6">© 2023 THIAGO SAUD</span>
 
 					<div class="d-flex gap-4">
-						<a href="https://www.linkedin.com/in/thiagosaud/" target="_blank" class="fs-3" aria-label="Open my page on Linkedin!">
+						<a rel="noopener" href="https://www.linkedin.com/in/thiagosaud/" target="_blank" class="fs-3" aria-label="Open my page on Linkedin!">
 							<i class="bi bi-linkedin"></i>
 						</a>
 
-						<a href="https://instagram.com/thiagosauddev/" target="_blank" class="fs-3" aria-label="Open my page on Instagram!">
+						<!-- <a href="https://instagram.com/thiagosauddev/" target="_blank" class="fs-3" aria-label="Open my page on Instagram!">
 							<i class="bi bi-instagram"></i>
-						</a>
+						</a> -->
 
-						<a href="https://github.com/thiagosauddev" target="_blank" class="fs-3" aria-label="Open my page on Github!">
+						<a rel="noopener" href="https://github.com/thiagosauddev" target="_blank" class="fs-3" aria-label="Open my page on Github!">
 							<i class="bi bi-github"></i>
 						</a>
 					</div>
@@ -442,5 +444,5 @@
 		<div id="particles-js" class="position-fixed top-0 z-n1 w-100 h-100"></div>
 	</body>
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRCX2XNCKR"></script>
+	<script rel="preload" src="https://www.googletagmanager.com/gtag/js?id=G-RRCX2XNCKR" crossorigin="anonymous" defer></script>
 </html>

@@ -8,13 +8,14 @@
 	}
 
 	100% {
-		transform: translate(0, -0);
+		transform: translate(0, 0);
 	}
 }
 
 *.animation-floating {
 	animation-name: floating;
 	animation-duration: 3s;
-	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	will-change: transform;
 }

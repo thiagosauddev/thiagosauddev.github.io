@@ -1,0 +1,18 @@
+/* stylelint-disable selector-max-id */
+@import "@scss/mixins/breakpoints";
+
+#animation-back-to-top {
+	display: none;
+
+	@include breakpoint("xlg") {
+		display: block;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.5s;
+
+		&.show {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}

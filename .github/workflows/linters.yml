@@ -50,12 +50,12 @@ jobs:
       - name: RUN PRETTIER CHECK
         uses: borales/actions-yarn@v4
         with:
-          cmd: prettier:check
+          cmd: prettier
 
       - name: RUN STYLELINT
         uses: borales/actions-yarn@v4
         with:
-          cmd: stylelint:check
+          cmd: lint:scss
 
       - name: RUN ESLINT
         uses: borales/actions-yarn@v4

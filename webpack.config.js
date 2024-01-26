@@ -126,15 +126,15 @@ module.exports = {
 			{
 				"default-src": "'self'",
 				"base-uri": "'self'",
-				"connect-src": ["'self'", "https://www.google-analytics.com"],
+				"connect-src": ["'self'", "*.google-analytics.com"],
 				"font-src": "'self'",
 				"frame-src": "'none'",
-				"img-src": ["'self'", "https://www.google-analytics.com"],
+				"img-src": ["'self'", "*.google-analytics.com"],
 				"manifest-src": "'self'",
 				"media-src": "'none'",
 				"object-src": "'none'",
 				"style-src": "'self'",
-				"script-src": ["'unsafe-inline'", "'self'", "'unsafe-eval'", "https://www.google-analytics.com"],
+				"script-src": ["'self'", "'unsafe-eval'", "*.google-analytics.com"],
 			},
 			{
 				enabled: true,

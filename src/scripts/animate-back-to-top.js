@@ -1,16 +1,14 @@
-const button = document.getElementById("animation-back-to-top");
+const BUTTON = document.getElementById("animation-back-to-top");
 
 window.addEventListener("scroll", () => {
-	const scrollHeight = document.documentElement.scrollHeight;
-	const scrollPosition = window.innerHeight + window.scrollY;
+	const SCROLL_HEIGHT = document.documentElement.scrollHeight;
+	const SCROLL_POSITION = window.innerHeight + window.scrollY;
 
-	if ((scrollHeight - scrollPosition) / scrollHeight <= 0.4) {
-		button.classList.add("show");
+	if ((SCROLL_HEIGHT - SCROLL_POSITION) / SCROLL_HEIGHT <= 0.4) {
+		BUTTON.classList.add("show");
 	} else {
-		button.classList.remove("show");
+		BUTTON.classList.remove("show");
 	}
 });
 
-button.addEventListener("click", () => {
-	window.scrollTo({ top: 0, behavior: "smooth" });
-});
+BUTTON.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));

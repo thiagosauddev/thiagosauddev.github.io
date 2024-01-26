@@ -6,5 +6,8 @@
 			"files": ["./src/scss/*.scss"],
 			"customSyntax": "postcss-scss"
 		}
-	]
+	],
+	"rules": {
+		"max-nesting-depth": 3
+	}
 }

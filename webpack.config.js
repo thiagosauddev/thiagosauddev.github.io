@@ -164,6 +164,11 @@ module.exports = {
 					to: PATH.resolve(__dirname, "dist"),
 					context: "*.txt",
 				},
+				{
+					from: PATH.resolve(__dirname, "src/assets/images/favicon.ico"),
+					to: PATH.resolve(__dirname, "dist"),
+					context: "*.ico",
+				},
 			],
 		}),
 	],

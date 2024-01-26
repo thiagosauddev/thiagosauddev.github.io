@@ -4,6 +4,7 @@
 
 # SRC FILES/FOLDERS
 /src/assets
+*.ico
 
 # PRODUCTION
 /dist

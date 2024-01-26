@@ -1,0 +1,18 @@
+@keyframes balancar {
+	0% {
+		transform: perspective(600px) rotateY(20deg);
+	}
+
+	50% {
+		transform: perspective(600px) rotateY(-20deg);
+	}
+
+	100% {
+		transform: perspective(600px) rotateY(20deg);
+	}
+}
+
+*.animation-3d {
+	animation: balancar 3s infinite;
+	transform-style: preserve-3d;
+}

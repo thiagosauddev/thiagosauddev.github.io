@@ -15,4 +15,5 @@
 *.animation-3d {
 	animation: balancar 3s infinite;
 	transform-style: preserve-3d;
+	will-change: transform; // BEST PRACTICES FOR PERFORMANCE
 }

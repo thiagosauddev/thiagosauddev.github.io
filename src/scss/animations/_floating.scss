@@ -17,5 +17,5 @@
 	animation-duration: 3s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
-	will-change: transform;
+	will-change: transform; // BEST PRACTICES FOR PERFORMANCE
 }

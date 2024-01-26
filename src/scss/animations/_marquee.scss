@@ -15,6 +15,7 @@
 	opacity: 1;
 	mask-image: linear-gradient(to right, rgb(0 0 0 / 0%) 0%, rgb(0 0 0) 12.5%, rgb(0 0 0) 87.5%, rgb(0 0 0 / 0%) 100%);
 	transform: perspective(1200px);
+	will-change: transform; // BEST PRACTICES FOR PERFORMANCE
 
 	ul {
 		position: relative;

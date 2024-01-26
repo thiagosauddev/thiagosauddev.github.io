@@ -1,0 +1,44 @@
+.animate-marquee-main-container {
+	position: relative;
+	display: flex;
+	flex: none;
+	place-items: center;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	max-height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	list-style-type: none;
+	user-select: none;
+	opacity: 1;
+	mask-image: linear-gradient(to right, rgb(0 0 0 / 0%) 0%, rgb(0 0 0) 12.5%, rgb(0 0 0) 87.5%, rgb(0 0 0 / 0%) 100%);
+	transform: perspective(1200px);
+	will-change: transform; // BEST PRACTICES FOR PERFORMANCE
+
+	ul {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		gap: 64px;
+		align-items: center;
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		max-height: 100%;
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+
+		img {
+			display: block;
+			min-width: 178px;
+			height: 55px;
+			border-radius: inherit;
+			image-rendering: auto;
+			object-position: center;
+			object-fit: contain;
+		}
+	}
+}

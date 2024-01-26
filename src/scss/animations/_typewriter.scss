@@ -15,9 +15,11 @@
 }
 
 *.typewriter {
+	padding-right: 5px;
 	margin: 0 auto;
 	overflow: hidden;
 	white-space: nowrap;
 	border-right: 0.15em solid #48e6c4;
 	animation: typing 4.5s steps(40, end), blink-caret 0.75s step-end infinite;
+	will-change: width, border-color; // BEST PRACTICES FOR PERFORMANCE
 }

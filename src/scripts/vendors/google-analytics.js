@@ -1,8 +1,10 @@
-window.dataLayer = window.dataLayer || [];
+window.addEventListener("load", () => {
+	window.dataLayer = window.dataLayer || [];
 
-function gtag() {
-	dataLayer.push(arguments);
-}
+	function gtag() {
+		dataLayer.push(arguments);
+	}
 
-gtag("js", new Date());
-gtag("config", "G-RRCX2XNCKR");
+	gtag("js", new Date());
+	gtag("config", "G-RRCX2XNCKR");
+});
